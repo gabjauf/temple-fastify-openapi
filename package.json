@@ -1,0 +1,19 @@
+{
+  "name": "temple-fastify-openapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabriel Jauffret",
+  "license": "MIT",
+  "dependencies": {
+    "fastify": "^4.24.3",
+    "tsx": "^4.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.6"
+  }
+}

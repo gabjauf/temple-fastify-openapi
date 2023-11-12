@@ -1,0 +1,9 @@
+// OPENAPI VERSION <%~ it.global.openapi %>
+<% const parsed = await it.helpers.parseOpenApi(it.global) %>
+
+<% Object.entries(parsed.paths).forEach(function([url, value]) { %>
+<% Object.entries(value).forEach(function([method, data]) { %>
+<%~ include("route", { method: method, data: data, url: url, draft7: it.helpers.draft7}) %>
+
+<% }) %>
+<% }) %>

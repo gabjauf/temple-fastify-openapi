@@ -1,0 +1,4 @@
+<% Object.entries(it.global.components.schemas).forEach(function([schemaName, value]) { %>
+export  const <%= schemaName %> = <%~ JSON.stringify(value, null, 2) %>;
+
+<% }) %>

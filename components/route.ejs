@@ -1,0 +1,21 @@
+export function <%= it.data.operationId %>(app: any, handler: (request, reply) => any) {
+  app.route({
+    // <%~ JSON.stringify(it.data) %>
+
+    method: '<%= it.method.toUpperCase() %>',
+    url: '<%= it.url.replace('{', ':').replace('}', '') %>',
+    schema: {
+
+      response: {
+        <% Object.entries(it.data.responses).forEach(function([code, data]) { %>
+        <% if (data.content) { %>
+          <%~ code %> : <%~ JSON.stringify(data.content, null, 2) %>
+        <% } %>
+        <% }) %>
+      }
+    },
+    handler: handler || function (request, reply) {
+      reply.send('<%= it.data.operationId %> not implemented')
+    }
+  })
+}
